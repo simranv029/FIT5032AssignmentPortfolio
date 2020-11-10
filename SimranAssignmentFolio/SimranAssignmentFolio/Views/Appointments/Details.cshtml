@@ -1,0 +1,42 @@
+﻿@model SimranAssignmentFolio.ViewModels.AppointmentViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Appointments</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cons.PatientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => Model.helper.getPatientFromId(model.cons.PatientId).FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cons.DoctorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => Model.helper.getDoctorFromId(model.cons.DoctorId).FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cons.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cons.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

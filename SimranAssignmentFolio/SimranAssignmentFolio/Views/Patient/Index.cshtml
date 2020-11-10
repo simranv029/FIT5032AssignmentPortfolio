@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1> Welcome @ViewBag.UserName</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Your Bookings</h2>
+        <p> Your Upcomg booings</p>
+        <p><a class="btn btn-primary" href="@Url.Action("Index", "Appointments")">Appointments.</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Show Nearby Doctors</h2>
+        <p>Closest Doctors.</p>
+        <p><a class="btn btn-primary" href="@Url.Action("showConsultantsNearMe", "Patient")">Councellors Near Me</a></p>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var msg = "@TempData["Message"]";
+            if(msg != "" & msg != null)
+            {
+                $('#exampleModalLabel').text("Successful");
+                $('#exampleModalBody').text(msg);
+                $('#exampleModal').modal('show');
+            }
+        });
+    </script>
+}
